@@ -1,0 +1,53 @@
+body {
+	background-color: #121212;
+}
+
+.glow {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	width: 100px;
+	height: 100px;
+
+	border-left: 20px solid rgba(11, 11, 11, 1);
+	border-right: 20px solid rgba(11, 11, 11, 1);
+	border-bottom: 20px solid rgba(11, 11, 11, 1);
+	border-top: 20px solid rgba(200, 20, 100, 1);
+	/* border-radius: 50%; */
+
+	animation: rotate 1.5s infinite linear;
+
+	box-shadow: 0 -15px 10px -10px rgba(200, 20, 100, 0.5),
+		inset 0 15px 10px -10px rgba(200, 20, 100, 0.25),
+		0 -10px 30px -10px rgba(200, 20, 100, 1),
+		inset 0 10px 20px -10px rgba(200, 20, 100, 0.75);
+}
+
+/* .glow::before,
+.glow::after {
+	position: absolute;
+	display: block;
+	content: "";
+	width: 20px;
+	height: 20px;
+	top: -2.5px;
+	border-radius: 50%;
+	background-color: rgba(200, 20, 100, 1);
+}
+.glow::before {
+	left: -2px;
+}
+.glow::after {
+	right: -2px;
+} */
+
+@keyframes rotate {
+	from {
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+	to {
+		transform: translate(-50%, -50%) rotate(360deg);
+	}
+}

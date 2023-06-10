@@ -1,0 +1,232 @@
+@font-face {
+	font-family: "Helvetica Neue LT GEO 45 Lights";
+	src: url("../fonts/HelveticaNeueLTGEO-45Lights.woff2") format("woff2"),
+		url("../fonts/HelveticaNeueLTGEO-45Lights.woff") format("woff"),
+		url("../fonts/HelveticaNeueLTGEO-45Lights.ttf") format("truetype");
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Palette Mosaic";
+	src: url("../fonts/PaletteMosaic-Regular.woff2") format("woff2"),
+		url("../fonts/PaletteMosaic-Regular.woff") format("woff"),
+		url("../fonts/PaletteMosaic-Regular.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Helvetica Neue LT GEO 45 Lights";
+}
+
+a {
+	text-decoration: none;
+}
+ul {
+	list-style: none;
+}
+img {
+	width: 100%;
+}
+.container {
+	max-width: 1400px;
+	width: 90%;
+	margin: 0 auto;
+}
+
+header {
+	background-color: darkcyan;
+	padding: 24px 10px;
+}
+.navbar,
+.navbar ul,
+.navbar li {
+	display: inline-block;
+}
+.navbar li {
+	margin: 0 10px;
+	position: relative;
+}
+.logo {
+	font-weight: 900;
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 24px;
+	font-family: "Palette Mosaic";
+}
+
+.navbar a {
+	color: white;
+	text-transform: uppercase;
+	color: white;
+	font-weight: 500;
+	font-size: 24px;
+}
+
+.card {
+	width: 200px;
+	height: 200px;
+}
+.red {
+	background-color: red;
+	animation-name: widthChange;
+	animation-duration: 2s;
+	animation-delay: 0.5s;
+	animation-timing-function: ease;
+	animation-iteration-count: infinite;
+	animation-fill-mode: forwards;
+	animation-direction: alternate;
+}
+.blue {
+	background-color: blue;
+	position: absolute;
+	animation-name: moveDownLeft;
+	animation-duration: 1s;
+	animation-delay: 0;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	animation-fill-mode: forwards;
+	animation-direction: alternate-reverse;
+}
+.green {
+	background-color: green;
+}
+
+.wrapper {
+	background-color: lightcoral;
+	margin-top: 50px;
+}
+
+.box {
+	position: relative;
+}
+.box {
+	width: 40%;
+	display: inline-block;
+	vertical-align: top;
+}
+.box img {
+	height: 400px;
+	object-fit: cover;
+}
+.box p,
+.bg-box p {
+	position: absolute;
+	padding: 10px;
+	background-color: white;
+	top: 50%;
+	left: 50%;
+	width: 80%;
+	transform: translate(-50%, -50%);
+}
+
+.box p,
+.bg-box p {
+	transition-property: all;
+	transition-duration: 1s;
+	transition-delay: 0.5s;
+	transition-timing-function: linear;
+
+	/* transition: color 0.3s 2s; */
+}
+
+/* background */
+
+.section {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+.bg-box {
+	width: 400px;
+	height: 400px;
+	background-color: red;
+	background-image: url("../img/img3.jpg");
+	background-position: center;
+	background-blend-mode: darken;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+}
+
+body {
+	/* background-image: url("../img/img3.jpg");
+	background-position: center;
+	background-size: cover; */
+}
+
+.bg-section {
+	background-image: url("../img/img3.jpg");
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+	height: 200px;
+}
+
+/* hover */
+
+.box p:hover {
+	color: white;
+	background-color: darkblue;
+	/* font-size: 24px; */
+}
+
+.bg-box:hover p {
+	background-color: lightgreen;
+	display: none;
+}
+
+.navbar li::after {
+	content: "";
+	width: 0;
+	height: 5px;
+	display: block;
+	position: absolute;
+	bottom: -5px;
+	left: 50%;
+	transform: translateX(-50%);
+	transition: all 0.3s;
+	background-color: white;
+}
+
+.navbar li:hover::after {
+	width: 60%;
+}
+
+/* animation */
+
+@keyframes widthChange {
+	from {
+		width: 0;
+		background-color: red;
+	}
+	to {
+		width: 100%;
+		background-color: darkcyan;
+	}
+}
+
+@keyframes moveDownLeft {
+	0% {
+		top: 0;
+		left: 0;
+	}
+	50% {
+		top: 20%;
+		left: 80%;
+		border-radius: 50%;
+		/* background-image: url("../img/img2.png");
+		background-size: cover;
+		background-position: center; */
+	}
+	100% {
+		top: 70%;
+		left: 80%;
+	}
+}
